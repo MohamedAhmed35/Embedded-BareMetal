@@ -6,12 +6,8 @@
  */
 
 #include "hal_gpio.h"
-#
-/* We provide address of each register because each register name Ex: DDRA
- * represents the value it stored and the value is changable, but array
- * elements must be constant so we provide address of each register
- */
-#
+
+
 volatile uint8 *dir_registers[] = {&DDRA, &DDRB, &DDRC, &DDRD};
 volatile uint8 *output_registers[] = {&PORTA, &PORTB, &PORTC, &PORTD};
 volatile uint8 *input_registers[] = {&PINA, &PINB, &PINC, &PIND};
@@ -43,7 +39,7 @@ static Std_ReturnType pinLogicReset(const gpio_pinConfig_t *pin_config)
  * @param 	pin_config pointer to the configuration @ref gpio_pinConfig_t
  * @param 	pinDirection
  * @return	Status of the function
- * 			(E_OK): 	The function done successfully
+ * 			(E_OK):     The function done successfully
  * 			(E_NOT_OK): The function has issue
  */
 Std_ReturnType gpio_pinWriteDir(const gpio_pinConfig_t *pin_config, pinDirection_t pin_direction)
@@ -74,7 +70,7 @@ Std_ReturnType gpio_pinWriteDir(const gpio_pinConfig_t *pin_config, pinDirection
  * @param 	pin_config pointer to the configuration @ref gpio_pinConfig_t
  * @param 	pinDirection
  * @return	Status of the function
- * 			(E_OK): 	The function done successfully
+ * 			(E_OK):     The function done successfully
  * 			(E_NOT_OK): The function has issue
  */
 Std_ReturnType gpio_pinReadDir(const gpio_pinConfig_t *pin_config, pinDirection_t *pin_direction)
@@ -95,8 +91,8 @@ Std_ReturnType gpio_pinReadDir(const gpio_pinConfig_t *pin_config, pinDirection_
  * @brief	Initialize a specific pin to be High or Low @ref pinLogic_t
  * @param 	pin_config pointer to the configuration @ref gpio_pinConfig_t
  * @param 	logic
- * @return``Status of the function
- * 			(E_OK): 	The function done successfully
+ * @return	Status of the function
+ * 			(E_OK):     The function done successfully
  * 			(E_NOT_OK): The function has issue
  */
 Std_ReturnType gpio_pinWriteLogic(const gpio_pinConfig_t *pin_config, pinLogic_t logic)
@@ -126,7 +122,7 @@ Std_ReturnType gpio_pinWriteLogic(const gpio_pinConfig_t *pin_config, pinLogic_t
  * @param 	pin_config pointer to the configuration @ref gpio_pinConfig_t
  * @param 	logic pointer to return the status of the specific pin
  * @return	Status of the function
- * 			(E_OK): 	The function done successfully
+ * 			(E_OK):     The function done successfully
  * 			(E_NOT_OK): The function has issue
  */
 Std_ReturnType gpio_pinReadLogic(const gpio_pinConfig_t *pin_config, pinLogic_t *logic)
@@ -147,7 +143,7 @@ Std_ReturnType gpio_pinReadLogic(const gpio_pinConfig_t *pin_config, pinLogic_t 
  * @brief	Toggle the status of a specific pin @ref TOGGLE_BIT
  * @param 	pin_config pointer to the configuration @ref gpio_pinConfig_t
  * @return	Status of the function
- * 			(E_OK): 	The function done successfully
+ * 			(E_OK):     The function done successfully
  * 			(E_NOT_OK): The function has issue
  */
 Std_ReturnType gpio_pinToggleLogic(const gpio_pinConfig_t *pin_config)
@@ -168,7 +164,7 @@ Std_ReturnType gpio_pinToggleLogic(const gpio_pinConfig_t *pin_config)
  * @brief	reset status of the pin and Initialize pin direction and logic
  * @param 	pin_config pointer to the configuration @ref gpio_pin_config_t
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_pinInitialize(const gpio_pinConfig_t *pin_config, pinLogic_t logic)
@@ -191,7 +187,7 @@ Std_ReturnType gpio_pinInitialize(const gpio_pinConfig_t *pin_config, pinLogic_t
  * @param 	port_index
  * @param 	direction
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_portWriteDir(portIndex_t port_index, uint8 direction)
@@ -213,7 +209,7 @@ Std_ReturnType gpio_portWriteDir(portIndex_t port_index, uint8 direction)
  * @param 	port_index
  * @param 	direction pointer to return the direction of port
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_portReadDir(portIndex_t port_index, uint8 *direction)
@@ -235,7 +231,7 @@ Std_ReturnType gpio_portReadDir(portIndex_t port_index, uint8 *direction)
  * @param 	port_index
  * @param 	logic
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_portWriteLogic(portIndex_t port_index, uint8 logic)
@@ -257,7 +253,7 @@ Std_ReturnType gpio_portWriteLogic(portIndex_t port_index, uint8 logic)
  * @param	port_index
  * @param 	logic
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_portReadLogic(portIndex_t port_index, uint8 *logic)
@@ -278,7 +274,7 @@ Std_ReturnType gpio_portReadLogic(portIndex_t port_index, uint8 *logic)
  * @brief	Toggle the status of the port
  * @param 	port_index
  * @return	Status of the function
- * 			 (E_OK): The function done successfully
+ * 			 (E_OK):     The function done successfully
  * 			 (E_NOT_ON): The function has issue to perform this action
  */
 Std_ReturnType gpio_protToggleLogic(portIndex_t port_index)
