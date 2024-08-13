@@ -6,11 +6,12 @@
  */
 
 #include "hal_gpio.h"
-
+#
 /* We provide address of each register because each register name Ex: DDRA
  * represents the value it stored and the value is changable, but array
  * elements must be constant so we provide address of each register
  */
+#
 volatile uint8 *dir_registers[] = {&DDRA, &DDRB, &DDRC, &DDRD};
 volatile uint8 *output_registers[] = {&PORTA, &PORTB, &PORTC, &PORTD};
 volatile uint8 *input_registers[] = {&PINA, &PINB, &PINC, &PIND};
