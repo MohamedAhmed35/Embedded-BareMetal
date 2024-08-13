@@ -1,6 +1,6 @@
 # AVR ATmega32 Drivers
 
-## overview
+## Overview
 This repository is dedicated to providing a comprehensive set of drivers for the AVR ATmega32 microcontroller. It includes drivers for various peripherals and features, enabling developers to build robust embedded system applications
 
 ## Repository Structure
